@@ -16,26 +16,29 @@ public class RoomSpawner : MonoBehaviour
 	private int rand;
 	public bool spawned = false;
 
-	public float waitTime = 4f;
+	public GameObject player;
+
+	//public float waitTime = 40f;
 
 	void Start()
 	{
-		Destroy(gameObject, waitTime);
+		//Destroy(gameObject, waitTime);
 		templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
-		Invoke("Spawn", 0.4f);
-	}
+        Invoke("Spawn", 0.4f);
+		
+    }
 
-
-	void Spawn()
+    void Spawn()
 	{
-		if (spawned == false)
+		if (spawned == false && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 3)
 		{
 			if (openingDirection == 1)
 			{
 				// Need to spawn a room with a BOTTOM door.
 				rand = Random.Range(0, templates.bottomRooms.Length);
 				Instantiate(templates.bottomRooms[rand], transform.position, transform.rotation = Quaternion.identity);
-			}
+
+            }
 			else if (openingDirection == 2)
 			{
 				// Need to spawn a room with a TOP door.
@@ -55,11 +58,13 @@ public class RoomSpawner : MonoBehaviour
 				Instantiate(templates.rightRooms[rand], transform.position, transform.rotation = Quaternion.identity);
 			}
 			spawned = true;
-		}
-	}
-	
-	
-	/*
+		}else
+        {
+            Invoke("Spawn", 0.4f);
+        }
+    }
+
+    /*
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		
@@ -77,5 +82,5 @@ public class RoomSpawner : MonoBehaviour
 		
 	}
 	*/
-	
+
 }

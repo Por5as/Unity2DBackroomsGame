@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &384508839983932507
+--- !u!1 &2016585811696125002
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 384508839983932505}
-  - component: {fileID: 384508839983932506}
+  - component: {fileID: 2016585811696125000}
+  - component: {fileID: 2016585811696125003}
   m_Layer: 0
-  m_Name: RoomTemplates_AntiStackWithWalls
+  m_Name: RoomTemplates_AntiStackWithWalls 1
   m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &384508839983932505
+--- !u!4 &2016585811696125000
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 384508839983932507}
+  m_GameObject: {fileID: 2016585811696125002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,13 +32,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &384508839983932506
+--- !u!114 &2016585811696125003
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 384508839983932507}
+  m_GameObject: {fileID: 2016585811696125002}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a677928439cae724ca0a4b463a7b78ab, type: 3}
@@ -72,4 +72,4 @@ MonoBehaviour:
   - {fileID: 4542120102692904761, guid: e56ca42944bd5ed4293a1e4062280e56, type: 3}
   - {fileID: 8214389371660458218, guid: 3f26f49dfad325e4495557d11e4ffda8, type: 3}
   - {fileID: 3134992726516224283, guid: b7d4e3399904f4342b8d855806fc080e, type: 3}
-  closedRoom: {fileID: 8839928746513368683, guid: 76836b433f8848640ac9c016c685a059, type: 3}
+  closedRoom: {fileID: 8142919363253850643, guid: a32006ef5be48714dbb3427190bdba7e, type: 3}

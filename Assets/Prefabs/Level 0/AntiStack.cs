@@ -19,7 +19,7 @@ public class AntiStack : MonoBehaviour
 		*/
 
 		
-		if (other.CompareTag("Room") /*&& !(other.CompareTag("NoDestroy"))*/ && transform.parent != other.gameObject.transform)
+		if (other.CompareTag("Room") && !(other.CompareTag("SpawnPoint")) && transform.parent != other.gameObject.transform)
 		{
 			Destroy(other.gameObject);
 			Instantiate(templates.closedRoom, transform.position, Quaternion.identity);

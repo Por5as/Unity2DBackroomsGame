@@ -177,7 +177,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 3
   spawned: 0
-  waitTime: 4
+  player: {fileID: 1330231486561936216, guid: 69022be69c5f4274392ab8ddb7e361b4, type: 3}
+  waitTime: 40
 --- !u!61 &4403452101552266945
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -273,7 +274,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openingDirection: 1
   spawned: 0
-  waitTime: 4
+  player: {fileID: 1330231486561936216, guid: 69022be69c5f4274392ab8ddb7e361b4, type: 3}
+  waitTime: 40
 --- !u!61 &7247074170524779956
 BoxCollider2D:
   m_ObjectHideFlags: 0
