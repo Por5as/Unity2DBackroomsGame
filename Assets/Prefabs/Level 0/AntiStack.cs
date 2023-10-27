@@ -25,6 +25,11 @@ public class AntiStack : MonoBehaviour
 			Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
 
 		}
-		
-	}
+
+        if (other.CompareTag("ClosedRoom") && !(other.CompareTag("SpawnPoint")) && transform.parent != other.gameObject.transform)
+        {
+            Destroy(other.gameObject);
+
+        }
+    }
 }

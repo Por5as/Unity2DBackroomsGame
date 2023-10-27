@@ -189,7 +189,7 @@ Transform:
   m_GameObject: {fileID: 5722691226667006339}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.32000002, z: 0}
-  m_LocalScale: {x: 0.3199999, y: 0.3199999, z: 0.32}
+  m_LocalScale: {x: 0.32, y: 0.32, z: 0.32}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4644907302111402424}
@@ -210,7 +210,6 @@ MonoBehaviour:
   openingDirection: 3
   spawned: 0
   player: {fileID: 1330231486561936216, guid: 69022be69c5f4274392ab8ddb7e361b4, type: 3}
-  waitTime: 40
 --- !u!61 &6577823659313959818
 BoxCollider2D:
   m_ObjectHideFlags: 0
