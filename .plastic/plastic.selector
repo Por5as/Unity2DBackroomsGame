@@ -1,4 +1,0 @@
-repository "Unity2DBackroomsGame@Por5as@cloud"
-  path "/"
-    br "/main"
-    co "/main"
