@@ -37,12 +37,15 @@ public class PlayerController : MonoBehaviour
         inputVector.x = Input.GetAxisRaw("Horizontal");
         inputVector.y = Input.GetAxisRaw("Vertical");
 
-        Debug.DrawLine(transform.position + inputVector * .2f, transform.position, Color.cyan);
+        rb.velocity = inputVector * movementspeed;
+
+        /*Debug.DrawLine(transform.position + inputVector * .2f, transform.position, Color.cyan);
 
         if (Physics2D.OverlapPoint(transform.position + inputVector * .2f, movableLayer.value))
         {
             rb.velocity = inputVector * movementspeed;
         }
+        */
     }
 
 }

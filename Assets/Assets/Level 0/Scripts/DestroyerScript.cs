@@ -7,10 +7,11 @@ public class DestroyerScript : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (!other.CompareTag("Player") && transform.parent != other.gameObject.transform)
+		if (!other.CompareTag("Player") && transform.parent != other.gameObject.transform) //Added AntiStack and Spawnpoint
 		{
 			Destroy(other.gameObject);
-		}
+
+        }
 	//Debug.Log("Destroyed");
 
 
@@ -22,5 +23,5 @@ public class DestroyerScript : MonoBehaviour
 		Debug.Log("Room destroyed");
 	}
 	*/
-}
+	}
 }

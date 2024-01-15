@@ -15,20 +15,23 @@ public class RoomSpawner : MonoBehaviour
 	private RoomTemplates templates;
 	private int rand;
 	public bool spawned = false;
+	private float randomTime;
 
-	//public GameObject player;
 
-	//public float waitTime = 40f;
 
-	void Start()
+    void Start()
 	{
 		//Destroy(gameObject, waitTime);
-		templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
-        Invoke("Spawn", 0.4f);
+
+		randomTime = Random.Range(0.1f, 0.5f);
+
+    templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
+        InvokeRepeating("SpawnRoom", randomTime, randomTime);
+		//Debug.Log(randomTime);
 		
     }
 
-    void Spawn()
+    void SpawnRoom()
 	{
 		if (spawned == false && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 3)
 		{
@@ -58,29 +61,11 @@ public class RoomSpawner : MonoBehaviour
 				Instantiate(templates.rightRooms[rand], transform.position, transform.rotation = Quaternion.identity);
 			}
 			spawned = true;
-		}else
-        {
-            Invoke("Spawn", 0.4f);
-        }
-    }
-
-    /*
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		
-		if (other.CompareTag("SpawnPoint"))
-		{
-			if (other.GetComponent<RoomSpawner>().spawned == false && spawned == false)
-			{
-				Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
-				
-				Destroy(gameObject);
-			}
-			spawned = true;
 		}
 		
-		
-	}
-	*/
-
+		else
+        {
+            Invoke("SpawnRoom", randomTime);
+        } 
+    }
 }
