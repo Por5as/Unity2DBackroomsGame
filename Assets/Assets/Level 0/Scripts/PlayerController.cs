@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float movementspeed = 2f;
+    public float movementspeed = 2f;
 
 
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
+    private Vector2 moveInput;
+
     //private Vector2 movementDirection;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        
     }
 
     /*
@@ -28,17 +30,22 @@ public class PlayerController : MonoBehaviour
 
     */
 
-    [SerializeField] private LayerMask movableLayer;
 
-    private Vector3 inputVector;
+
+   
 
     void Update()
     {
-        inputVector.x = Input.GetAxisRaw("Horizontal");
-        inputVector.y = Input.GetAxisRaw("Vertical");
+        moveInput.x = Input.GetAxisRaw("Horizontal");
+        moveInput.y = Input.GetAxisRaw("Vertical");
 
-        rb.velocity = inputVector * movementspeed;
+        //moveInput.Normalize(); ----------------------------------------------------------------- NEEDS TO BE FIXED --------------------------------------------------------------------------------------------------------------------
 
+        rb.velocity = moveInput * movementspeed;
+
+       
+        
+        
         /*Debug.DrawLine(transform.position + inputVector * .2f, transform.position, Color.cyan);
 
         if (Physics2D.OverlapPoint(transform.position + inputVector * .2f, movableLayer.value))
