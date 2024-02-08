@@ -23,7 +23,7 @@ public class RoomSpawner : MonoBehaviour
 	{
 		//Destroy(gameObject, waitTime);
 
-		randomTime = Random.Range(0.1f, 0.5f);
+		randomTime = Random.Range(0.1f, 0.4f);
 
     templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
         InvokeRepeating("SpawnRoom", randomTime, randomTime);
@@ -31,9 +31,10 @@ public class RoomSpawner : MonoBehaviour
 		
     }
 
+
     void SpawnRoom()
 	{
-		if (spawned == false && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 3)
+		if (spawned == false && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 8)
 		{
 			if (openingDirection == 1)
 			{

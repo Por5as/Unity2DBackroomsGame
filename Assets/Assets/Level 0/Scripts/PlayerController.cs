@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float movementspeed = 2f;
+    public float movementspeed = 1f;
 
 
     public Rigidbody2D rb;
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
 
    
 
-    void Update()
+    void FixedUpdate()
     {
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
