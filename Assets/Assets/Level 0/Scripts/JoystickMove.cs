@@ -6,24 +6,42 @@ public class JoystickMove : MonoBehaviour
 {
 
     public Joystick movementJoystick;
-    public float playerSpeed;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
 
-    void Start()
+    public Vector2 movementDirection;
+    public float movementSpeed;
+    public float MOVEMENT_BASE_SPEED = 1.25f;
+    public Animator animator;
+
+    void Update()
     {
-        rb = GetComponent<Rigidbody2D>();
+        ProcessInput();
+        Move();
+        Animate();
     }
 
-   void Update()
+
+    void ProcessInput()
     {
-        if (movementJoystick.Direction.y != 0)
+        movementDirection = new Vector2(movementJoystick.Direction.x, movementJoystick.Direction.y);
+        movementSpeed = Mathf.Clamp(movementDirection.magnitude, 0.0f, 1.0f);
+        movementDirection.Normalize();
+    }
+
+    void Move()
+    {
+        rb.velocity = movementDirection * movementSpeed * MOVEMENT_BASE_SPEED;
+    }
+
+    void Animate()
+    {
+        if (movementDirection != Vector2.zero)
         {
-            rb.velocity = new Vector2(movementJoystick.Direction.x * playerSpeed, movementJoystick.Direction.y * playerSpeed);
+            animator.SetFloat("Horizontal", movementDirection.x);
+            animator.SetFloat("Vertical", movementDirection.y);
         }
-        else
-        {
-            rb.velocity = Vector2.zero;
-        }
+        animator.SetFloat("Speed", movementSpeed);
+
     }
 
 }
