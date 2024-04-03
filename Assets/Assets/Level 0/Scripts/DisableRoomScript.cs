@@ -8,13 +8,15 @@ public class DisableRoomScript : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            if (child.gameObject.activeInHierarchy == true && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) > 10)
+            if (child.gameObject.activeInHierarchy == true && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) > 15) //---------PC
+            //if (child.gameObject.activeInHierarchy == true && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) > 9) //----Mobile
             {
                 child.gameObject.SetActive(false);
                 //Debug.Log("Inactive");
             }
         
-            else if (child.gameObject.activeInHierarchy == false && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 8)
+            else if (child.gameObject.activeInHierarchy == false && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 12) //------PC
+            //else if (child.gameObject.activeInHierarchy == false && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 8) //--Mobile
             {
                 child.gameObject.SetActive(true);
                 //Debug.Log("Active");

@@ -25,7 +25,7 @@ public class RoomSpawner : MonoBehaviour
 
 		randomTime = Random.Range(0.1f, 0.4f);
 
-    templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
+        templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
         InvokeRepeating("SpawnRoom", randomTime, randomTime);
 		//Debug.Log(randomTime);
 		
@@ -34,8 +34,9 @@ public class RoomSpawner : MonoBehaviour
 
     void SpawnRoom()
 	{
-		if (spawned == false && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 8)
-		{
+		if (spawned == false && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 12) //-----------PC
+        //if (spawned == false && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 8) //-----------Mobile
+        {
 			if (openingDirection == 1)
 			{
 				// Need to spawn a room with a BOTTOM door.

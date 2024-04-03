@@ -11,6 +11,8 @@ TagManager:
   - Wall
   - NoDestroy
   - ClosedRoom
+  - LoadScreen
+  - PauseMenu
   layers:
   - Default
   - TransparentFX
@@ -45,6 +47,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: OnTop
+    uniqueID: 3898389269
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
