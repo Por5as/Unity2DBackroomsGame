@@ -11,11 +11,12 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveInput;
 
     //private Vector2 movementDirection;
-
+    /*
     void Start()
     {
         
     }
+    */
 
     /*
     void Update()

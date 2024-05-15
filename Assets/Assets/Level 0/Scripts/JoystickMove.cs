@@ -18,6 +18,7 @@ public class JoystickMove : MonoBehaviour
         ProcessInput();
         Move();
         Animate();
+        //Resources.UnloadUnusedAssets();
     }
 
 
@@ -30,7 +31,8 @@ public class JoystickMove : MonoBehaviour
 
     void Move()
     {
-        rb.velocity = movementDirection * movementSpeed * MOVEMENT_BASE_SPEED;
+        rb.velocity = MOVEMENT_BASE_SPEED * movementSpeed * movementDirection;
+        //rb.velocity = movementDirection * movementSpeed * MOVEMENT_BASE_SPEED;
     }
 
     void Animate()

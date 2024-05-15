@@ -731,7 +731,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -859,7 +859,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -966,6 +966,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5991159943560239910, guid: 6ee89d3705b28c342883719085b5e4e1, type: 3}
+      propertyPath: closedRoom
+      value: 
+      objectReference: {fileID: 791341096681610446, guid: 7bab9fd1a7d4ca04a9d60dd5564a075a, type: 3}
     - target: {fileID: 8427908432055997408, guid: 6ee89d3705b28c342883719085b5e4e1, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2342,7 +2346,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 9999
   m_TargetDisplay: 0

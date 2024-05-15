@@ -23,12 +23,13 @@ public class RoomSpawner : MonoBehaviour
 	{
 		//Destroy(gameObject, waitTime);
 
-		randomTime = Random.Range(0.1f, 0.4f);
+		randomTime = Random.Range(0.1f, 0.7f);
 
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
-        InvokeRepeating("SpawnRoom", randomTime, randomTime);
-		//Debug.Log(randomTime);
-		
+        InvokeRepeating(nameof(SpawnRoom), randomTime, randomTime);
+        //InvokeRepeating("SpawnRoom", randomTime, randomTime);
+        //Debug.Log(randomTime);
+
     }
 
 
@@ -67,7 +68,8 @@ public class RoomSpawner : MonoBehaviour
 		
 		else
         {
-            Invoke("SpawnRoom", randomTime);
-        } 
+            Invoke(nameof(SpawnRoom), randomTime);
+            //Invoke("SpawnRoom", randomTime);
+        }
     }
 }

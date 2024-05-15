@@ -8,7 +8,8 @@ public class RemoveLoadingScreen : MonoBehaviour
     private GameObject LoadScreen;
     void Start()
     {
-        Invoke("RemoveLoadScreen", 5f);
+        Invoke(nameof(RemoveLoadScreen), 5f);
+        //Invoke("RemoveLoadScreen", 5f);
     }
 
     void RemoveLoadScreen()
