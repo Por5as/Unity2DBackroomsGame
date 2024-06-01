@@ -13,6 +13,7 @@ TagManager:
   - ClosedRoom
   - LoadScreen
   - PauseMenu
+  - RoomParent
   layers:
   - Default
   - TransparentFX

@@ -14,13 +14,8 @@ public class CharacterMoveScript : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating(nameof(Unlag), 5.0f, 30f);
-        //InvokeRepeating("Unlag", 5.0f, 30f);
-    }
-
-    void Unlag()
-    {
-        Resources.UnloadUnusedAssets();
+        movementDirection = new Vector2(0.0f, 0.0f);
+        InvokeRepeating(nameof(Unlag), 10, 30);
     }
 
     void Update()
@@ -29,11 +24,17 @@ public class CharacterMoveScript : MonoBehaviour
         Move();
         Animate();
     }
-    
+
+    void Unlag()
+    {
+        Resources.UnloadUnusedAssets();
+    }
 
     void ProcessInput()
     {
-        movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        movementDirection.x = Input.GetAxis("Horizontal");
+        movementDirection.y = Input.GetAxis("Vertical");
+
         movementSpeed = Mathf.Clamp(movementDirection.magnitude, 0.0f, 1.0f);
         movementDirection.Normalize();
     }
@@ -41,7 +42,6 @@ public class CharacterMoveScript : MonoBehaviour
     void Move()
     {
         rb.velocity = MOVEMENT_BASE_SPEED * movementSpeed * movementDirection;
-        //rb.velocity = movementDirection * movementSpeed * MOVEMENT_BASE_SPEED;
     }
 
     void Animate()

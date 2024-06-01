@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Scripting;
 
 public class JoystickMove : MonoBehaviour
 {
@@ -8,23 +9,34 @@ public class JoystickMove : MonoBehaviour
     public Joystick movementJoystick;
     public Rigidbody2D rb;
 
-    public Vector2 movementDirection;
+    private Vector2 movementDirection;
     public float movementSpeed;
     public float MOVEMENT_BASE_SPEED = 1.25f;
     public Animator animator;
+
+    void Start()
+    {
+        movementDirection = new Vector2(0.0f, 0.0f);
+        InvokeRepeating(nameof(Unlag), 10, 30);
+    }
 
     void Update()
     {
         ProcessInput();
         Move();
         Animate();
-        //Resources.UnloadUnusedAssets();
     }
 
+    void Unlag()
+    {
+        Resources.UnloadUnusedAssets();
+    }
 
     void ProcessInput()
     {
-        movementDirection = new Vector2(movementJoystick.Direction.x, movementJoystick.Direction.y);
+        movementDirection.x = movementJoystick.Direction.x;
+        movementDirection.y = movementJoystick.Direction.y;
+
         movementSpeed = Mathf.Clamp(movementDirection.magnitude, 0.0f, 1.0f);
         movementDirection.Normalize();
     }
@@ -32,7 +44,6 @@ public class JoystickMove : MonoBehaviour
     void Move()
     {
         rb.velocity = MOVEMENT_BASE_SPEED * movementSpeed * movementDirection;
-        //rb.velocity = movementDirection * movementSpeed * MOVEMENT_BASE_SPEED;
     }
 
     void Animate()

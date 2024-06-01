@@ -1,5 +1,7 @@
+
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RoomSpawner : MonoBehaviour
@@ -16,60 +18,64 @@ public class RoomSpawner : MonoBehaviour
 	private int rand;
 	public bool spawned = false;
 	private float randomTime;
+	private Transform player;
 
 
 
-    void Start()
+	void Start()
 	{
-		//Destroy(gameObject, waitTime);
-
-		randomTime = Random.Range(0.1f, 0.7f);
-
+		randomTime = Random.Range(0.1f, 0.5f);
+		player = GameObject.FindGameObjectWithTag("Player").transform;
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
-        InvokeRepeating(nameof(SpawnRoom), randomTime, randomTime);
-        //InvokeRepeating("SpawnRoom", randomTime, randomTime);
-        //Debug.Log(randomTime);
 
+		Invoke(nameof(SpawnRoom), randomTime);
     }
 
 
     void SpawnRoom()
 	{
-		if (spawned == false && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 12) //-----------PC
-        //if (spawned == false && Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 8) //-----------Mobile
-        {
-			if (openingDirection == 1)
-			{
-				// Need to spawn a room with a BOTTOM door.
-				rand = Random.Range(0, templates.bottomRooms.Length);
-				Instantiate(templates.bottomRooms[rand], transform.position, transform.rotation = Quaternion.identity);
+
+		if (spawned == false)
+		{
+
+            if (Vector2.Distance(transform.position, player.position) < 12)
+            { 
+			  
+
+				if (openingDirection == 1)
+				{
+					// Need to spawn a room with a BOTTOM door.
+					rand = Random.Range(0, templates.bottomRooms.Length);
+					Instantiate(templates.bottomRooms[rand], transform.position, transform.rotation = Quaternion.identity);
+
+				}
+				else if (openingDirection == 2)
+				{
+					// Need to spawn a room with a TOP door.
+					rand = Random.Range(0, templates.topRooms.Length);
+					Instantiate(templates.topRooms[rand], transform.position, transform.rotation = Quaternion.identity);
+				}
+				else if (openingDirection == 3)
+				{
+					// Need to spawn a room with a LEFT door.
+					rand = Random.Range(0, templates.leftRooms.Length);
+					Instantiate(templates.leftRooms[rand], transform.position, transform.rotation = Quaternion.identity);
+				}
+				else if (openingDirection == 4)
+				{
+					// Need to spawn a room with a RIGHT door.
+					rand = Random.Range(0, templates.rightRooms.Length);
+					Instantiate(templates.rightRooms[rand], transform.position, transform.rotation = Quaternion.identity);
+				}
+				spawned = true;
+			}
+            
+			else
+            {
+                Invoke(nameof(SpawnRoom), randomTime);
 
             }
-			else if (openingDirection == 2)
-			{
-				// Need to spawn a room with a TOP door.
-				rand = Random.Range(0, templates.topRooms.Length);
-				Instantiate(templates.topRooms[rand], transform.position, transform.rotation = Quaternion.identity);
-			}
-			else if (openingDirection == 3)
-			{
-				// Need to spawn a room with a LEFT door.
-				rand = Random.Range(0, templates.leftRooms.Length);
-				Instantiate(templates.leftRooms[rand], transform.position, transform.rotation = Quaternion.identity);
-			}
-			else if (openingDirection == 4)
-			{
-				// Need to spawn a room with a RIGHT door.
-				rand = Random.Range(0, templates.rightRooms.Length);
-				Instantiate(templates.rightRooms[rand], transform.position, transform.rotation = Quaternion.identity);
-			}
-			spawned = true;
-		}
-		
-		else
-        {
-            Invoke(nameof(SpawnRoom), randomTime);
-            //Invoke("SpawnRoom", randomTime);
+
         }
     }
 }
