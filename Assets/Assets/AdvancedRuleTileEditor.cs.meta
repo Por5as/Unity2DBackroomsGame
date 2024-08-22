@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 9eb84ec5bf2bf9243a5061cbaebc3e48
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_PreviewGrid: {instanceID: 0}
+  - topIcon: {fileID: 2800000, guid: 82434ef435447b341afc4c155a8f7598, type: 3}
+  - bottomIcon: {fileID: 2800000, guid: 4ad5ac16cc6cd9240a947b9a5fd0daf4, type: 3}
+  - leftIcon: {fileID: 2800000, guid: e4978214369f38c40bce31fe687c0dc2, type: 3}
+  - rightIcon: {fileID: 2800000, guid: 99b720e8461f15f4382b339fc92dc642, type: 3}
+  - nottopIcon: {fileID: 2800000, guid: ac50ef72050567e4897caa3c7faf2049, type: 3}
+  - notbottomIcon: {fileID: 2800000, guid: 845fc184c58672b43b491f530c85feb9, type: 3}
+  - notleftIcon: {fileID: 2800000, guid: a8d51572222834745b9d97b0e0ae4042, type: 3}
+  - notrightIcon: {fileID: 2800000, guid: 087bf2b5825c88648bb679cd9aec101e, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
