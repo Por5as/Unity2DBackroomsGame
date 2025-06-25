@@ -846,7 +846,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &390497257
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1014,7 +1014,7 @@ MonoBehaviour:
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
+  m_RepeatDelay: 0.1
   m_ForceModuleActive: 0
 --- !u!114 &433625494
 MonoBehaviour:
@@ -1267,6 +1267,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524868247}
   m_CullTransparentMesh: 1
+--- !u!1 &600828954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 600828956}
+  - component: {fileID: 600828955}
+  m_Layer: 0
+  m_Name: DropdownHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &600828955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600828954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f69a17d1f8e766468dd5aca974ab553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeviceTypeDropdown: {fileID: 619263198}
+  SightBehindWallsDropdown: {fileID: 1585588981}
+--- !u!4 &600828956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600828954}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 63.286175, y: 198.62154, z: 0.6085589}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &606806696
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,7 +1401,7 @@ GameObject:
   - component: {fileID: 619263199}
   - component: {fileID: 619263198}
   m_Layer: 5
-  m_Name: Dropdown
+  m_Name: Device Type Dropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1439,7 +1485,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 600828955}
+        m_TargetAssemblyTypeName: HandleDropdown, Assembly-CSharp
+        m_MethodName: IsMobile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0
 --- !u!114 &619263199
 MonoBehaviour:
@@ -2085,7 +2143,7 @@ GameObject:
   - component: {fileID: 760848294}
   - component: {fileID: 760848293}
   m_Layer: 5
-  m_Name: Dropdown
+  m_Name: Coming Soon Dropdown 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2907,7 +2965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1094129845
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3187,7 +3245,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1194280181
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3218,7 +3276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1212808352}
   m_Layer: 0
-  m_Name: Coming soon
+  m_Name: Coming soon 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4379,7 +4437,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1538078704}
   m_Layer: 0
-  m_Name: Sight behind walls
+  m_Name: Sight Behind Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4675,7 +4733,7 @@ GameObject:
   - component: {fileID: 1585588982}
   - component: {fileID: 1585588981}
   m_Layer: 5
-  m_Name: Dropdown
+  m_Name: Sight Behind Walls Dropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4759,7 +4817,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 600828955}
+        m_TargetAssemblyTypeName: HandleDropdown, Assembly-CSharp
+        m_MethodName: SightBehindWalls
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0
 --- !u!114 &1585588982
 MonoBehaviour:
@@ -4946,7 +5016,7 @@ GameObject:
   - component: {fileID: 1693887285}
   - component: {fileID: 1693887284}
   m_Layer: 5
-  m_Name: Dropdown
+  m_Name: Coming Soon Dropdown 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5085,7 +5155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1700008683
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6384,3 +6454,4 @@ SceneRoots:
   - {fileID: 1011377966}
   - {fileID: 433625495}
   - {fileID: 990809393}
+  - {fileID: 600828956}
